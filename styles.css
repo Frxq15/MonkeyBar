@@ -1,0 +1,183 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+}
+
+#page-wrap {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.banner {
+	background-color: #f062a9;
+	color: white;
+	width: 100%;
+	height: 60px;
+	padding: 20px;
+}
+
+div.center {
+	text-align: center;
+}
+
+#center {
+	text-align: center;
+}
+
+.footer {
+	padding: 5px;
+	width: 100px;
+	color: white;
+	text-align: center;
+	background: #333;
+	position: absolute;
+	bottom: 0;
+}
+
+#transactions {
+	min-height: 50px;
+	border: 1px solid black;
+	width: 244px;
+}
+
+form {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.button {
+	background-color: #333;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.button:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container {
+	margin: 0px auto 0px auto;
+}
+
+input[type=submit],
+input[type=reset] {
+	background-color: #333;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	height: 50px;
+	width: 150px;
+}
+
+.add {
+	background-color: #333;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	height: 50px;
+	width: 150px;
+}
+
+.add:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type=submit].green,
+input[type=reset].green {
+	background-color: rgb(2, 177, 81);
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	font-weight: bold;
+	margin: 4px 2px;
+	cursor: pointer;
+	content: "test";
+	height: 50px;
+	width: 150px;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fancy {
+	font-family: 'Rock Salt', cursive;
+}
+
+.title {
+	font-family: 'Alice', serif;
+}
+
+.smoothieOptions {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.MilkshakeOptions {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+label,
+input[type="radio"] {
+	font-size: 18px;
+	vertical-align: middle;
+	text-align: center;
+	margin-top: -1px;
+}
+.side {
+	background-color: white;
+	padding: 20px;
+	padding-right: 200px;
+	border-right-width: 3px;
+	border-top: white;
+	border-bottom: white;
+	border-left: white;
+	border-style: solid;
+	border-right-color: white;
+}
+/* #e0ac3a; */
+.checkoutbanner {
+	background-color: #f062a9;
+	text-align: center;
+	padding-right: 300px;
+	color: white;
+	width: 495px;
+	height: 60px;
+	padding: 20px;
+}
+div.checkoutbox {
+	position: absolute;
+	right: 150px;  
+	width: 500px;
+	height: 600px;
+	border: 3px solid #333;
+  }
+p.bottom {
+	padding-top: 400px;
+}
+p.checkout {
+	padding: 20px;
+}

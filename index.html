@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Monkey Bar | Place Order</title>
+      <link rel="shortcut icon" type="image/jpg" href="images/zoo.png"/>
+      <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Rock%20Salt%7CStaatliches">
+      <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Alice">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Dan Cartwright">
+      <meta name="description" content="Monkey Bar">
+      <meta name="theme-color" content="orange">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="apple-touch-icon" href="images/zoo.png">
+      <script src="main.js"></script>
+   </head>
+   <body onload="initial(), setTotal()">
+      <div class="center">
+         <div class="banner"><b>THE MONKEY BAR</b></div>
+         <h1 class="title">ORDER YOUR DRINK</h1>
+         <button class="button button2" onclick="log('save favourite')"><b>★ SAVE FAVOURITE</b></button>
+         <button class="button button2" id="order" onclick="log('order favourite')"><b>★ ORDER FAVOURITE</b></button>
+      </div>
+      <div class="checkoutbox">
+         <div class="checkoutbanner"><b>CHECKOUT</b></div>
+         <h3 class="fancy" id="center">ITEMS IN BASKET</h3>
+         <hr>
+         <span id="basket"></span>
+      </div>
+      <div class="center">
+         <form id="drinksForm">
+            <!-- SIZE SELECTION-->
+            <h3 class="fancy">SELECT YOUR SIZE</h3>
+            <input type="radio" id="small" name="size" value="small" onclick="sizeSelect('Small')">
+            <label for="small">Small</label>
+            <input type="radio" id="medium" name="size" value="medium" onclick="sizeSelect('Medium')" checked>
+            <label for="medium">Medium</label>
+            <input type="radio" id="large" name="size" value="large" onclick="sizeSelect('Large')">
+            <label for="large">Large</label>
+            <br>
+            <br>
+            <!-- END -->
+            <!-- TYPE SELECTION-->
+            <h3 class="fancy">SELECT YOUR DRINK TYPE</h3>
+            <input type="radio" id="smoothie" name="type" value="smoothie" onclick="drinkSelect('Smoothie')" required>
+            <label for="smoothie">Smoothie</label>
+            <input type="radio" id="milkshake" name="type" value="milkshake" onclick="drinkSelect('Milkshake')" required>
+            <label for="milkshake">Milkshake</label>
+            <br>
+            <br>
+            <!-- END -->
+            <!-- BASE SELECTION-->
+            <div id="smoothieOptions">
+               <h3 class="fancy">SELECT YOUR BASE</h3>
+               <p><em>Please select from one of the following bases.</em></p>
+               <input type="radio" id="base1" name="base" value="base1" onclick="log('selected base1')" required>
+               <label for="base1"> <span id="baseA"></span> </label>
+               <br>
+               <input type="radio" id="base2" name="base" value="base2" onclick="log('selected base2')" required>
+               <label for="base2"><span id="baseB"></span></label>
+            </div>
+            <div id="MilkshakeOptions">
+               <input type="radio" id="base3" name="base" value="base3" onclick="log('selected base3')" required>
+               <label for="base3"><span id="baseC"></span></label>
+               <br>
+               <input type="radio" id="base4" name="base" value="base4" onclick="log('selected base4')" required>
+               <label for="base4"><span id="baseD"></span></label>
+               <br>
+            </div>
+            <!-- INGREDIENTS SELECTION-->
+            <h3 class="fancy">SELECT YOUR INGREDIENTS</h3>
+            <input type="checkbox" id="ingredient1" name="ingredient1" value="0" onclick="selectIngredient('ingredient1')">
+            <label for="ingredient1"> <span id="ingredientA"></span> </label>
+            <br>
+            <input type="checkbox" id="ingredient2" name="ingredient2" value="1" onclick="selectIngredient('ingredient2')">
+            <label for="ingredient2"> <span id="ingredientB"></span> </label>
+            <br>
+            <input type="checkbox" id="ingredient3" name="ingredient3" value="2" onclick="selectIngredient('ingredient3')">
+            <label for="ingredient3"> <span id="ingredientC"></span> </label>
+            <br>
+            <input type="checkbox" id="ingredient4" name="ingredient4" value="3" onclick="selectIngredient('ingredient4')">
+            <label for="ingredient4"> <span id="ingredientD"></span> </label>
+            <br>
+            <input type="checkbox" id="ingredient5" name="ingredient5" value="4" onclick="selectIngredient('ingredient5')">
+            <label for="ingredient5"> <span id="ingredientE"></span> </label>
+            <br>
+            <input type="checkbox" id="ingredient6" name="ingredient6" value="5" onclick="selectIngredient('ingredient6')">
+            <label for="ingredient6"> <span id="ingredientF"></span> </label>
+            <br>
+            <input type="checkbox" id="ingredient7" name="ingredient7" value="6" onclick="selectIngredient('ingredient7')">
+            <label for="ingredient7"> <span id="ingredientG"></span> </label>
+            <br>
+            <br>
+            <!-- EXTRAS SELECTION-->
+            <div id="Extras">
+               <h3 class="fancy">FANCY SOME EXTRAS?</h3>
+               <input type="checkbox" id="extra1" name="chocolatesprinkles" value="0" onclick="selectExtra('Chocolate Sprinkles', 'extra1')">
+               <label for="extra1">Chocolate Sprinkles</label>
+               <br>
+               <input type="checkbox" id="extra2" name="marshmallows" value="1" onclick="selectExtra('Marshmallows', 'extra2')">
+               <label for="extra2">Marshmallows</label>
+               <br>
+               <input type="checkbox" id="extra3" name="cream" value="2" onclick="selectExtra('Cream', 'extra3')">
+               <label for="extra3">Cream</label>
+               <br>
+               <input type="checkbox" id="extra4" name="malt" value="3" onclick="selectExtra('Malt', 'extra4')">
+               <label for="extra4">Malt</label>
+               <br>
+               <br>
+            </div>
+            <!-- END -->
+            <div class="center">
+               <!--<input type="submit" class="green" value="Submit Order" style="padding: 20px;">-->
+            </div>
+            <br>
+         </form>
+         <button class="button button2" id="add" onclick="addToBasket()"><b>Add To Basket</b></button>
+         <button class="button button2" id="reset" onclick="resetForm()"><b>Clear Selection</b></button>
+         <h3 class="fancy">TOTAL</h3>
+         <p style="padding-left: 5px;"><b>Current Drink:</b> <span id="total"></span></p>
+         <p style="padding-left: 5px;"><b>Total:</b> <span id="newtotal"></span></p>
+         <button class="button button2" id="reset" onclick="submit()"><b>Submit Order</b></button>
+      </div>
+   </body>
+   <!-- <script>    CTRL K U
+      //check whether browser support service workers
+      if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+      navigator.serviceWorker.register('serviceworker.js').then(
+      function(registration) {
+      console.log('Service worker registration successful',registration);
+      },
+      function(err) {
+      console.log('Service worker registration failed', err);
+      });
+      });
+      }
+      </script> -->
+</html>
