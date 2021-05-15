@@ -14,16 +14,16 @@
       <link rel="apple-touch-icon" href="images/zoo.png">
       <script src="main.js"></script>
    </head>
-   <body onload="initial(), setTotal()">
+   <body onload="initial(), setTotal(), checkForFavourite()">
       <div class="center">
          <div class="banner"><b>THE MONKEY BAR</b></div>
          <h1 class="title">ORDER YOUR DRINK</h1>
-         <button class="button button2" onclick="log('save favourite')"><b>★ SAVE FAVOURITE</b></button>
-         <button class="button button2" id="order" onclick="log('order favourite')"><b>★ ORDER FAVOURITE</b></button>
+         <button class="button button2" id="save" onclick="setFavourite()"><b>★ SAVE FAVOURITE</b></button>
+         <button class="button button2" id="order" onclick="getFavourite(), setfCost()"><b>★ ORDER FAVOURITE</b></button>
       </div>
       <div class="checkoutbox">
          <div class="checkoutbanner"><b>CHECKOUT</b></div>
-         <h3 class="fancy" id="center">ITEMS IN BASKET</h3>
+         <h4 class="fancy" id="center">ITEMS IN BASKET</h4>
          <hr>
          <span id="basket"></span>
       </div>
@@ -54,7 +54,7 @@
                <h3 class="fancy">SELECT YOUR BASE</h3>
                <p><em>Please select from one of the following bases.</em></p>
                <input type="radio" id="base1" name="base" value="base1" onclick="log('selected base1')" required>
-               <label for="base1"> <span id="baseA"></span> </label>
+               <label for="base1"><span id="baseA"></span></label>
                <br>
                <input type="radio" id="base2" name="base" value="base2" onclick="log('selected base2')" required>
                <label for="base2"><span id="baseB"></span></label>
@@ -110,7 +110,6 @@
             </div>
             <!-- END -->
             <div class="center">
-               <!--<input type="submit" class="green" value="Submit Order" style="padding: 20px;">-->
             </div>
             <br>
          </form>
@@ -119,10 +118,11 @@
          <h3 class="fancy">TOTAL</h3>
          <p style="padding-left: 5px;"><b>Current Drink:</b> <span id="total"></span></p>
          <p style="padding-left: 5px;"><b>Total:</b> <span id="newtotal"></span></p>
-         <button class="button button2" id="reset" onclick="submit()"><b>Submit Order</b></button>
+         <button class="sbutton button2" id="reset" onclick="submit()"><b>Submit Order</b></button>
+         <br>
       </div>
    </body>
-   <!-- <script>    CTRL K U
+   <script>
       //check whether browser support service workers
       if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
@@ -135,5 +135,5 @@
       });
       });
       }
-      </script> -->
+   </script>
 </html>
